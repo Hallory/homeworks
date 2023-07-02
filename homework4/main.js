@@ -49,3 +49,12 @@ function getMark(students,marks){
 }
 getMark(students, marks)
 
+function getMarkForProject(pairs){
+    let x ;
+    for (let i = 0; i < pairs.length; i++) {
+        pairs[i].push(...[i], x=Math.random()*5)
+        console.log(pairs[i])
+    }
+    
+}
+getMarkForProject(pairs)
