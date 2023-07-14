@@ -8,10 +8,30 @@ const getRandomArray = (length, max, min)=>{
     //return Array.from(Array(length), ()=>Math.floor(Math.random()*(max-min+1))+min)
     
 }
-let result = getRandomArray(10,1,100)
+let result = getRandomArray(10,-35,100)
+console.log(result)
+
+const countPositiveNumber = () =>{
+    let countPositive = 0
+    for (let i = 0; i < result.length; i++) {
+        if(result[i]>0){
+            countPositive++
+        }
+        
+    }
+    return countPositive;
+}   
+console.log("Чисел більше 0: "+countPositiveNumber())
+
+const getDividedByFive = ()=>{
+    let isNotDevidedNumber = result => result %5 !== 0;
+    let devidedNumber = result.filter(isNotDevidedNumber)
+    return devidedNumber;
+}
+console.log("Фільтр 5: "+getDividedByFive())
 
 const getModa = ()=>{
-    console.log(result)
+    
     let modaNumber = 0;
     for (let i = 0; i < result.length; i++) {
         for (let j = 0; j < i; j++) {
@@ -48,3 +68,5 @@ const getMedian=()=>{
     return medianNumber
 }
 console.log("Медіаною є число: "+getMedian())
+
+
