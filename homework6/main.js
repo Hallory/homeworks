@@ -25,12 +25,132 @@ const students = [{
     }];
 
 
-    const getSubject = (name)=>{
-        
-    let arr = []
-        for(var subj in name.subjects){
-            toString(arr.push(subj))
+    function getAvarageMark(student) {
+        let arr = [] ;
+        let result = 0;
+        for (const subject in student.subjects) {
+          let newArr=student.subjects[subject]
+          for(let i=0;i<newArr.length;i++){
+            arr.push(newArr[i])
+            
+           
+          }
+          
         }
-        return arr
+        for (let i = 0; i < arr.length; i++) {
+             result = (result + arr[i]);
+            
+        }
+        
+        return((result/arr.length).toFixed(2))
+        
+      }
+
+      console.log(getAvarageMark(students[2]))
+
+
+      const getStudentInfo=(student)=>{
+
+
+        return `Name: ${student.name}\tCourse:${student.course}\t Average:  ${getAvarageMark(student)}`
+      }
+      console.log(getStudentInfo(students[1]))
+
+
+      const getStudentsName = (student)=>{
+        let arr = []
+        student.map((student)=>{
+            arr.push(student.name)
+        })
+        return arr.sort()
+      }
+
+      console.log(getStudentsName(students))
+
+      const getBestStudent = (student)=>{
+        let best = 0;
+        let name ;
+        student.map((student)=>{
+            if(getAvarageMark(student)>best){
+                best = getAvarageMark(student)
+                name = student.name
+            }
+        })
+        
+        return(name +" "+ best)
+      }
+      console.log(getBestStudent(students))
+
+      // const calculateWordLetters = (word)=>{
+        
+      //   let splitedWord = word.split('')
+      //   let arr = [];
+      //   let count = {};
+      //   for (let i = 0; i < splitedWord.length; i++) {
+          
+          
+      //     for (let j =i+1; j < splitedWord.length; j++) {
+      //       if (splitedWord[i] === splitedWord[j]) {
+      //           arr.push(splitedWord[i]);
+      //           count[splitedWord[i]] = (count[splitedWord[i]] || 0) + 1;
+      //       }
+            
+      //     }
+          
+      //   }
+        
+      //   console.log(arr)
+      //   return count
+      // }
+      // console.log(calculateWordLetters("xxxtentacion"))
+
+      const calculateWordLetters = (word) => {
+        let splitedWord = word.split('');
+        let count = {};
+      
+        for (let i = 0; i < splitedWord.length; i++) {
+          let currentLetter = splitedWord[i];
+      
+          if (!count[currentLetter]) {
+            count[currentLetter] = 1;
+          } else {
+            count[currentLetter]++;
+          }
+        }
+      
+        //let arr = Object.keys(count).filter((letter) => count[letter] > 1);
+      
+        
+        return count;
+      };
+      
+      console.log(calculateWordLetters("xxxtentacion"));
+
+
+
+
+
+
+
+
+
+
+
+function getFirstLetterBig(word) {
+    let newWord=word.charAt(0).toUpperCase()+word.slice(1)
+    return newWord
+  }
+  function changeSymbols(word) {
+    let newWord=word.split('_').join(' ')
+    return newWord
+  }
+  
+  function getSubjects(student) {
+    let res=[]
+    for(let prop in student.subjects){
+      res.push(changeSymbols(getFirstLetterBig(prop)))
     }
-    console.log(getSubject(students[0]))
+    console.log(res)
+  }
+  
+  getSubjects(students[0])
