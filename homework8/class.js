@@ -21,11 +21,11 @@ class Student{
                 }
         }
         getAverageMark(){
-            if (this.marks.length === 0) {
+            if (this._marks.length === 0) {
                 return 0;
             }
-            const averageMark = this.marks.reduce((total, mark)=>total+mark)
-            return averageMark/this.marks.length;
+            const averageMark = this._marks.reduce((total, mark)=>total+mark)
+            return averageMark/this._marks.length;
             }
         dismiss(){
             this.isDismissed = true;
@@ -52,29 +52,41 @@ console.log(student.marks)
 
 
 
-
 class BudgetStudent extends Student {
-    
-    constructor(university, course, fullName){
-        super(university, course, fullName);
-        this._marks = this.marks
-        this.stipendyMark = this.getAverageMark();
-        
-        this.getScholarship();
-            
-        
-        
+    constructor(university, course, fullName) {
+      super(university, course, fullName);
+      this.stipendyMark = this.getAverageMark();
+      this.checkScholarship();
     }
-    getScholarship(){
-        
-        setInterval(() => {
-            console.log("stipendy");
-            console.log(this.stipendyMark)
-        }, 30000);
-}
-    
-}
-
+  
+    set marks(mark) {
+      if (!this.dismissed) {
+        super.marks = mark;
+        this.stipendyMark = this.getAverageMark();
+      } else {
+        console.log("Студента виключено, оцінки більше не можна ставити.");
+      }
+    }
+  
+    checkScholarship() {
+      setInterval(() => {
+        if (!this.dismissed && this.stipendyMark >= 4.0) {
+          console.log("Вы получили стипендию!");
+        }
+      }, 300); // 30 секунд в миллисекундах
+    }
+  
+    getScholarship() {
+      if (this.dismissed) {
+        console.log("Вас исключили, стипендию не получите.");
+      } else if (this.stipendyMark >= 4.0) {
+        console.log("Средний балл выше 4.0. Стипендия доступна.");
+      } else {
+        console.log("Средний балл ниже 4.0, стипендию не получите.");
+      }
+    }
+  }
+  
     
 const budgetStudent = new BudgetStudent("Тдату","4","Alek")
 
@@ -84,10 +96,11 @@ console.log(budgetStudent._marks)
 budgetStudent.marks=1;
 budgetStudent.marks=3;
 budgetStudent.marks=2;
+budgetStudent.marks=5;
+budgetStudent.marks=1;
+budgetStudent.marks=5;
+budgetStudent.marks=5;
 
-
-
-console.log(budgetStudent.marks)
 console.log(budgetStudent.getAverageMark())
 
 
