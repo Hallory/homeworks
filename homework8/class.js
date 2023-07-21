@@ -69,21 +69,21 @@ class BudgetStudent extends Student {
     }
     getScholarship() {
         if (this.dismissed) {
-          console.log("Вас исключили, стипендию не получите.");
+          console.log("Вас виключено, стипендію не отримаєте.");
         } else if (this.stipendyMark >= 4.0) {
-          console.log("Средний балл выше 4.0. Стипендия доступна.");
-          this.startScholarshipInterval(); // Вызываем метод для запуска интервальной проверки стипендии
+          console.log("Середній бал вище 4.0. Стипендія доступна.");
+          this.startScholarshipInterval(); // Викликаємо метод для запуску інтервальної перевірки стипендії
         } else {
-          console.log("Средний балл ниже 4.0, стипендию не получите.");
+          console.log("Середній бал нижче 4.0, стипендію не отримаєте.");
         }
       }
     
       startScholarshipInterval() {
         setInterval(() => {
           if (!this.dismissed && this.stipendyMark >= 4.0) {
-            console.log("Вы получили стипендию!");
+            console.log("Ви отримали стипендію!");
           }
-        }, 30000); // 30 секунд в миллисекундах
+        }, 30000); // 30 секунд в мілісекундах
       }
     }
 
