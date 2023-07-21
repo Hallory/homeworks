@@ -56,7 +56,7 @@ class BudgetStudent extends Student {
     constructor(university, course, fullName) {
       super(university, course, fullName);
       this.stipendyMark = this.getAverageMark();
-      this.checkScholarship();
+      this.getScholarship();
     }
   
     set marks(mark) {
@@ -67,25 +67,26 @@ class BudgetStudent extends Student {
         console.log("Студента виключено, оцінки більше не можна ставити.");
       }
     }
-  
-    checkScholarship() {
-      setInterval(() => {
-        if (!this.dismissed && this.stipendyMark >= 4.0) {
-          console.log("Ви отримуєте 1400грн стипендії");
-        }
-      }, 30000); // 30 секунд в миллисекундах
-    }
-  
     getScholarship() {
-      if (this.dismissed) {
-        console.log("Вас виключено, стипендію не отримуєте.");
-      } else if (this.stipendyMark >= 4.0) {
-        console.log("Середній балі більше 4.0. Стипендія доступна.");
-      } else {
-        console.log("Средній бал меньше 4.0, стипендію не отримуєте.");
+        if (this.dismissed) {
+          console.log("Вас исключили, стипендию не получите.");
+        } else if (this.stipendyMark >= 4.0) {
+          console.log("Средний балл выше 4.0. Стипендия доступна.");
+          this.startScholarshipInterval(); // Вызываем метод для запуска интервальной проверки стипендии
+        } else {
+          console.log("Средний балл ниже 4.0, стипендию не получите.");
+        }
+      }
+    
+      startScholarshipInterval() {
+        setInterval(() => {
+          if (!this.dismissed && this.stipendyMark >= 4.0) {
+            console.log("Вы получили стипендию!");
+          }
+        }, 30000); // 30 секунд в миллисекундах
       }
     }
-  }
+
   
     
 const budgetStudent = new BudgetStudent("Тдату","4","Alek")
