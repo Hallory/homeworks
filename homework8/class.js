@@ -71,18 +71,18 @@ class BudgetStudent extends Student {
     checkScholarship() {
       setInterval(() => {
         if (!this.dismissed && this.stipendyMark >= 4.0) {
-          console.log("Вы получили стипендию!");
+          console.log("Ви отримуєте 1400грн стипендії");
         }
-      }, 300); // 30 секунд в миллисекундах
+      }, 30000); // 30 секунд в миллисекундах
     }
   
     getScholarship() {
       if (this.dismissed) {
-        console.log("Вас исключили, стипендию не получите.");
+        console.log("Вас виключено, стипендію не отримуєте.");
       } else if (this.stipendyMark >= 4.0) {
-        console.log("Средний балл выше 4.0. Стипендия доступна.");
+        console.log("Середній балі більше 4.0. Стипендія доступна.");
       } else {
-        console.log("Средний балл ниже 4.0, стипендию не получите.");
+        console.log("Средній бал меньше 4.0, стипендію не отримуєте.");
       }
     }
   }
@@ -95,9 +95,9 @@ console.log(budgetStudent.getAverageMark())
 console.log(budgetStudent._marks)
 budgetStudent.marks=1;
 budgetStudent.marks=3;
-budgetStudent.marks=2;
 budgetStudent.marks=5;
-budgetStudent.marks=1;
+budgetStudent.marks=5;
+budgetStudent.marks=5;
 budgetStudent.marks=5;
 budgetStudent.marks=5;
 
