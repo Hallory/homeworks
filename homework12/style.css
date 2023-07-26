@@ -1,0 +1,37 @@
+.getChar{
+    width: 80px;
+    height:  30px;
+    background-color: burlywood;
+    border: 1px solid brown;
+    cursor: pointer;
+    margin: 10px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.icon{
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 33vh;
+    border: 1px solid black;
+    
+}
+.charDescription{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: inherit;
+    max-height: 30px;
+}
+.imageDiv{
+    width: inherit;
+    display: flex;
+    align-items: center;
+}
+.imageDiv img{
+    width: inherit;
+    max-height: 270px;
+}
