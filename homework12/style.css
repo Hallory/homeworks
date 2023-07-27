@@ -1,37 +1,64 @@
-.getChar{
-    width: 80px;
-    height:  30px;
-    background-color: burlywood;
-    border: 1px solid brown;
-    cursor: pointer;
-    margin: 10px;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
 }
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.icon{
-    display: flex;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 33vh;
-    border: 1px solid black;
-    
-}
-.charDescription{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: inherit;
-    max-height: 30px;
-}
-.imageDiv{
-    width: inherit;
+
+.character {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
-.imageDiv img{
-    width: inherit;
-    max-height: 270px;
+
+.character img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
+.character-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.character-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.character-birth-date {
+    font-size: 14px;
+}
+
+.character-gender {
+    font-size: 14px;
+}
+
+.get-info-button {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.get-info-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
