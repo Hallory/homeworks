@@ -16,6 +16,10 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .character img {
@@ -56,6 +60,37 @@ body {
 
 .get-info-button:hover {
     background-color: #0056b3;
+}
+.allplanet-container{
+    display: flex;
+    flex-direction: column;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.buttons-container{
+    display: flex;
+    justify-content: space-around;
+}
+.next-button{
+    width: 33%;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+.planets-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.planet-div{
+    margin: 10px;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 
