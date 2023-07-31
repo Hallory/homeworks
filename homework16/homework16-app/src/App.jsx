@@ -16,6 +16,16 @@ function App() {
           image={RAY_IMAGE}
           date={"26 лют."}
       />
+      <Post 
+        author={{
+          name: "Anakin skywalker",
+          photo: ANAKIN_IMAGE,
+          nickname: "@dart_vader"
+          }}
+          content="WTF? Who is Ray? Why she is Skywalker? Luke...?"
+          image={RAY_IMAGE}
+          date={"26 лют."}
+      />
       
       
     </div>
