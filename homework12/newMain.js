@@ -186,6 +186,7 @@ const planetsContainer = document.createElement("div");
 const wookieeFormat = '?format=wookiee';
 btn.onclick = () => {
   getPeople();
+
 };
 btnWookiee.onclick = (isWookie = false) => {
   getPeople(true);
@@ -193,7 +194,7 @@ btnWookiee.onclick = (isWookie = false) => {
 
 const planetsUrl = "https://swapi.dev/api/planets";
 
-async function getPeople(isWookie = false) {
+async function getPeople(isWookie = false, ) {
   console.log("Started");
   btn.disabled = true;
 
@@ -201,13 +202,15 @@ async function getPeople(isWookie = false) {
     
     const selectValue = selectElement.value;
     const peoplesUrl = `https://swapi.dev/api/films/${selectValue}`;
-  
     charactersContainer.innerHTML = "";
+    await toWookiee(peoplesUrl);
     await getPlanet();
-    const response = await fetch(peoplesUrl);
-    const data = await response.json();
+    //const response = await fetch(peoplesUrl);
+    const data = await getInfo(peoplesUrl);
     const characters = data["characters"];
-  
+    // if(isWookie === true){
+    //   await getPeople();
+    // }
     for (const url of characters) {
       const char = await getInfo(url);
       const characterDiv = document.createElement("div");
@@ -301,5 +304,17 @@ function forPlanets(startIndex, endIndex, planets) {
   }
 }
 
-
+async function toWookiee(filmUrl){
+  try {
+    const response = await fetch(filmUrl);
+    const data = await response.json();
+    const characters = data['characters']
+    for (const character of characters) {
+    console.log( `${character}${wookieeFormat}`)
+    return `${character}${wookieeFormat}`
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
   
