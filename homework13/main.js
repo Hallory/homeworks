@@ -27,6 +27,8 @@ function* newFornGenerator(startSize){
 }
 
 const fontGenerator = newFornGenerator(14);
+const initialFontSize = fontGenerator.next().value;
+container.style.fontSize = `${initialFontSize}px`;
 
 upBtn.addEventListener('click', ()=>{
     const newSize = fontGenerator.next("up").value;
