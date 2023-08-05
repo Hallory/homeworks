@@ -1,4 +1,4 @@
-function getRandomColor(){
+export function getRandomColor(){
     let color = "#";
     let randomColor = "0123456789ABCDEF";
     for (let i = 0; i < 6; i++) {
@@ -10,7 +10,7 @@ function getRandomColor(){
 
 
 
-function generateBlocks(){
+ export function generateBlocks(){
 const  container = document.querySelector(".container")
 
 const maxBox = 25;

@@ -194,7 +194,7 @@ btnWookiee.onclick = (isWookie = false) => {
 
 const planetsUrl = "https://swapi.dev/api/planets";
 
-async function getPeople(isWookie = false, ) {
+ export async function getPeople(isWookie = false, ) {
   console.log("Started");
   btn.disabled = true;
 

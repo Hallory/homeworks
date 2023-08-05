@@ -1,4 +1,4 @@
-const students = [{
+export const students = [{
     name: "Tanya",
     course: 3,
     subjects: {
@@ -25,7 +25,7 @@ const students = [{
     }];
 
 
-    function getAvarageMark(student) {
+    export function getAvarageMark(student) {
         let arr = [] ;
         let result = 0;
         for (const subject in student.subjects) {
@@ -81,28 +81,7 @@ const students = [{
       }
       console.log(getBestStudent(students))
 
-      // const calculateWordLetters = (word)=>{
-        
-      //   let splitedWord = word.split('')
-      //   let arr = [];
-      //   let count = {};
-      //   for (let i = 0; i < splitedWord.length; i++) {
-          
-          
-      //     for (let j =i+1; j < splitedWord.length; j++) {
-      //       if (splitedWord[i] === splitedWord[j]) {
-      //           arr.push(splitedWord[i]);
-      //           count[splitedWord[i]] = (count[splitedWord[i]] || 0) + 1;
-      //       }
-            
-      //     }
-          
-      //   }
-        
-      //   console.log(arr)
-      //   return count
-      // }
-      // console.log(calculateWordLetters("xxxtentacion"))
+     
 
       const calculateWordLetters = (word) => {
         let splitedWord = word.split('');
@@ -118,7 +97,7 @@ const students = [{
           }
         }
       
-        //let arr = Object.keys(count).filter((letter) => count[letter] > 1);
+        
       
         
         return count;

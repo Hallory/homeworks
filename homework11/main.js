@@ -1,4 +1,4 @@
-function getRandomChinese(lenght){
+export function getRandomChinese(lenght){
     return new Promise ((resolve, reject)=>{
         let result = ''
 

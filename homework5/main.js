@@ -1,4 +1,4 @@
-const getRandomArray = (length, max, min)=>{
+export const getRandomArray = (length, max, min)=>{
     
     const myArr =  [...Array(length)]
     //const random = Math.floor(Math.random()*(max-min+1))+min;

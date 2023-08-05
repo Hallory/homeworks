@@ -1,0 +1,10 @@
+.my-block {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid black;
+    
+}

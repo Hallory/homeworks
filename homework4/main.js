@@ -2,11 +2,11 @@ const students = ["Олександр", "Ігор", "Олена", "Іра", "О�
 const themes = ["Диференційне рівняння", "Теорія автоматів",
 "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
-let women 
-let men
+let women = []; // Объявляем пустой массив для женской группы
+let men = []; // Объявляем пустой массив для мужской группы
 let arr = []
-function getPair(students){
-
+ export function getPair(students){
+    
     for (let i = 0; i < students.length; i++) {
         const student = students[i];
             if(student.charAt(student.length-1)=='а'||student.charAt(student.length-1)=='я'){
