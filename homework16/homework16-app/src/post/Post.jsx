@@ -5,9 +5,9 @@ const Post = ({ author, content, image, date }) => {
     <main>
     <div className={module.post__container}>
       <div className={module.img__container}>
-        <span className={module.img__span}>
+        {/* <span className={module.img__span}>
           <img src={author.photo} alt="Icon" />
-        </span>
+        </span> */}
       </div>
       <div className={module.content__data}>
         <div className={module.data}>
@@ -24,11 +24,11 @@ const Post = ({ author, content, image, date }) => {
             <span className={module.span__data}>{author.nickname}</span>
           </div>
           <div className={module.author__data}>
-            <span className={module.span__data}>{date}</span>
+            <span className={module.span__data}>{author.date}</span>
           </div>
         </div>
-        <div className={module.content__text}>{content}</div>
-        <div className={module.content__image}><img src={image} alt="" /></div>
+        {/* <div className={module.content__text}>{author.content}</div> */}
+        <div className={module.content__image}><img src={author.image} alt="" /></div>
         <div className={module.activity__content}>
         <i class="fa-regular fa-heart"> <span style={{paddingLeft:"5px"}}>556</span> </i>
         <i class="fa-solid fa-share"><span style={{paddingLeft:"5px"}}>127</span></i>

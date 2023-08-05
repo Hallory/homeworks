@@ -1,0 +1,11 @@
+.myInput{
+    height: 30px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 10px;
+    background: gray;
+}
+::-webkit-input-placeholder{
+    color: white;
+}
