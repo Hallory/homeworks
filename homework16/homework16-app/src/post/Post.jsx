@@ -5,9 +5,9 @@ const Post = ({ author, content, image, date }) => {
     <main>
     <div className={module.post__container}>
       <div className={module.img__container}>
-        {/* <span className={module.img__span}>
+        <span className={module.img__span}>
           <img src={author.photo} alt="Icon" />
-        </span> */}
+        </span>
       </div>
       <div className={module.content__data}>
         <div className={module.data}>

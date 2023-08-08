@@ -25,7 +25,8 @@ function App() {
     e.preventDefault()
     const newPost = {
       name,
-      nickname
+      nickname,
+      photo: ANAKIN_IMAGE
     }
     setAuthor([...author, newPost])
   }
