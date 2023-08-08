@@ -27,7 +27,7 @@ const Post = ({ author, content, image, date }) => {
             <span className={module.span__data}>{author.date}</span>
           </div>
         </div>
-        {/* <div className={module.content__text}>{author.content}</div> */}
+        <div className={module.content__text}>{author.content}</div>
         <div className={module.content__image}><img src={author.image} alt="" /></div>
         <div className={module.activity__content}>
         <i class="fa-regular fa-heart"> <span style={{paddingLeft:"5px"}}>556</span> </i>

@@ -9,38 +9,20 @@ function App() {
   const [author, setAuthor] = useState([
     {
       name: "Anakin skywalker",
-      //photo: ANAKIN_IMAGE,
+      photo: ANAKIN_IMAGE,
       nickname: "@dart_vader",
-      //content:"WTF? Who is Ray? Why she is Skywalker? Luke...?",
-      //image:RAY_IMAGE,
-      //date: "26 лют."
+      content:"WTF? Who is Ray? Why she is Skywalker? Luke...?",
+      image:RAY_IMAGE,
+      date: "26 лют."
       },
       
     
 ])
-  const [name, setName] = useState('');
-  const [nickname, setNickName] = useState('');
-
-  const addPost = (e)=>{
-    e.preventDefault()
-    const newPost = {
-      name,
-      nickname,
-      photo: ANAKIN_IMAGE
-    }
-    setAuthor([...author, newPost])
-  }
+  
 
   return (
     <div className="App">
-      <div className="name__container">
-        <form >
-          <MyInput onChange = {e => setName(e.target.value)} type="text" placeholder = 'name'/>
-        <MyInput onChange = {e => setNickName(e.target.value)} type = "text" placeholder = 'nickName'/>
-        <button onClick={addPost} >add</button>
-        </form>
-        
-      </div>
+      
       {author.map((author)=>
         <Post author={author} key={author}/>
       )}
